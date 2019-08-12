@@ -11,3 +11,5 @@
 ->cd sockettcp
 ->run python t1.py in one phone(he has to put ip address first of his phone assigned by router) 
 ->python t2.py in another(same address used by t1)
+
+Note:ALL commands will be executed in termux
