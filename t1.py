@@ -8,13 +8,17 @@ port=9999
 
 s.bind((l,port))
 s.listen(5)
+def many(c):
+	while True:
+		g=c.recv(1024)
+		print(g.decode('ascii'))
+		c.send(input("Enter The Message:").encode('ascii'))
 
 
 while True:
     c,addr=s.accept()
     print(c,"socket running")
-    g=c.recv(1024)
-    print(g.decode('ascii'))
-    c.send(input("Enter The Message:").encode('ascii'))
-    continue
+    many(c)
+
+   
 s.close()
