@@ -12,7 +12,8 @@ def many(c):
 	while True:
 		g=c.recv(1024)
 		print(g.decode('ascii'))
-		c.send(input("Enter The Message:").encode('ascii'))
+		p=input("Enter The Message:").encode('ascii')
+		c.send(p)
 
 
 while True:
